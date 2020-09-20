@@ -6,8 +6,8 @@ from intrinsic_viscosity_general import *
 
 # Parameters
 N = 190
-sigma = 0.2
-a = 0.1
+sigma = 0.15
+a = 0.15
 b = 1.0
 Rg2 = N/6.
 
@@ -23,14 +23,15 @@ drainage = compute_drainage_function(rho, drag, sigma, b, truncate=np.inf)
 
 # Plot
 plt.figure()
-r_list = np.linspace(0, 20, 10)
+r_list = np.linspace(0, 50, 10)
 
 drag_list = []
 for r in r_list:
     drag_list.append(drag(r))
 plt.plot(r_list, drag_list, label=r"$\xi$")
 
-for bound in [50, 100]:
+
+for bound in [203]:
     drainage = compute_drainage_function(rho, drag, sigma, b, truncate=bound)
     drainage_list = []
     for r in r_list:
