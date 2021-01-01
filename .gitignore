@@ -1,3 +1,9 @@
-# Intellij files
+# IntelliJ files
 .idea/*
-viscosity.iml
+polyiv.iml
+
+# oald files
+polyiv/old
+
+# data
+data
