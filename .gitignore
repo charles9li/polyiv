@@ -5,5 +5,8 @@ polyiv.iml
 # oald files
 polyiv/old
 
-# data
-data
+# test data
+tests/data
+
+# .pyc files
+*.pyc
