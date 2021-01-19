@@ -150,7 +150,7 @@ class Zimm(object):
         np.fill_diagonal(rms_r, 1.)     # fill diagonals with 1 to prevent divide by 0 error
         
         # compute H matrix
-        self._H = 1. / rms_r
+        self._H = np.sqrt(6. / np.pi) / rms_r
         di = np.diag_indices(self._n_beads)
         self._H[di] = 1. / bead_radii
         self._H *= self._radius_ref
