@@ -56,8 +56,8 @@ class Zimm(object):
             self._bead_types.append(atom.name)
 
     @classmethod
-    def from_dcd(cls, dcd, top, chain_index=0):
-        trajectory = md.load_dcd(dcd, top)
+    def from_dcd(cls, dcd, top, stride=1, chain_index=0):
+        trajectory = md.load_dcd(dcd, top, stride=stride)
         return cls(trajectory, chain_index=chain_index)
 
     @property
